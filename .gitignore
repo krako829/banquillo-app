@@ -27,3 +27,10 @@ target/
 
 # Datos locales (nunca se suben)
 datos/
+
+# Editores y sistema
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
