@@ -1,5 +1,6 @@
 # 0002 · Persistencia en un archivo JSON
 
+**Fecha:** 2026-10-18  
 **Estado:** aceptada
 
 ## Contexto
