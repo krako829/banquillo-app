@@ -1,5 +1,7 @@
 package com.banquillo.api;
 
+import com.banquillo.api.jugador.JugadorRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
@@ -13,4 +15,12 @@ public abstract class TestDeIntegracion {
 
     @Autowired
     protected MockMvc mvc;
+
+    @Autowired
+    private JugadorRepository jugadores;
+
+    @BeforeEach
+    void vaciarBaseDeDatos() {
+        jugadores.deleteAll();
+    }
 }
