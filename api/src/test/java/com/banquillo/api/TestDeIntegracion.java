@@ -1,5 +1,6 @@
 package com.banquillo.api;
 
+import com.banquillo.api.entrenamiento.EntrenamientoRepository;
 import com.banquillo.api.jugador.JugadorRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,14 @@ public abstract class TestDeIntegracion {
     protected MockMvc mvc;
 
     @Autowired
+    private EntrenamientoRepository entrenamientos;
+
+    @Autowired
     private JugadorRepository jugadores;
 
     @BeforeEach
     void vaciarBaseDeDatos() {
+        entrenamientos.deleteAll();
         jugadores.deleteAll();
     }
 }
