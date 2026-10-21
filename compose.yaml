@@ -15,5 +15,18 @@ services:
       timeout: 3s
       retries: 10
 
+  api:
+    build: ./api
+    profiles: ["completo"]
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/banquillo
+      DB_USER: banquillo
+      DB_PASSWORD: banquillo
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
 volumes:
   datos-db:
